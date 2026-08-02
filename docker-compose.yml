@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: ETB_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 010823
+    ports:
+      - "8080:8080"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.3
+    container_name: keycloak
+    command: start-dev
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/ETB_db
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: 010823
+
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+
+    ports:
+      - "9090:8080"
+
+    depends_on:
+      - postgres

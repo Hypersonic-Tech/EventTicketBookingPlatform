@@ -1,0 +1,70 @@
+package com.example.ETBPlatform.enity;
+
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+@Entity
+@Table(name = "events")
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Event {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id", updatable = false, nullable = false)
+    private UUID id;
+
+    @Column(name = "name" , nullable = false)
+    private String name;
+
+    //event start and end
+    @Column(name = "event_start" , nullable = false)
+    private LocalDateTime start;
+
+    @Column(name="event_end" , nullable = false)
+    private LocalDateTime end;
+
+    @Column(name= "venue" , nullable = false)
+    private String venue;
+
+    //sales start and sales end
+    @Column(name = "sales_start" , nullable = false)
+    private LocalDateTime salesStart;
+
+    @Column(name = "sales_end" , nullable = false)
+    private LocalDateTime salesEnd;
+
+    @Column(name = "status" , nullable = false)
+    @Enumerated(EnumType.STRING) //store an enum in the database as its name (String) instead of its numeric position (ordinal).
+    private EventStatusEnum status;
+
+    @ManyToOne(fetch = FetchType.LAZY)//delays loading the related User until it's actually needed, which is generally better for performance.
+    @JoinColumn(name = "organizer_id") //tells which column should store the foreign key
+    private User organizer;
+
+    @ManyToMany(mappedBy = "attendingEvents")
+    private List<User> attendees = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "staffingEvents")
+    private List<User> staff = new ArrayList<>();
+
+    @CreatedDate
+    @Column(name = "created_at" , updatable = false , nullable = false)
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    @Column(name = "updated_at" , updatable = false , nullable = false)
+    private LocalDateTime updatedAt;
+
+}

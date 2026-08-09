@@ -49,6 +49,9 @@ public class Event {
     @Enumerated(EnumType.STRING) //store an enum in the database as its name (String) instead of its numeric position (ordinal).
     private EventStatusEnum status;
 
+    @OneToMany(mappedBy = "event" , cascade = CascadeType.ALL)
+    private List<TicketType>ticketTypes = new ArrayList<>();
+
     @ManyToOne(fetch = FetchType.LAZY)//delays loading the related User until it's actually needed, which is generally better for performance.
     @JoinColumn(name = "organizer_id") //tells which column should store the foreign key
     private User organizer;

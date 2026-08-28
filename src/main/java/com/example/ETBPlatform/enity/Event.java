@@ -53,6 +53,7 @@ public class Event {
     @OneToMany(mappedBy = "event" , cascade = CascadeType.ALL)
     private List<TicketType>ticketTypes = new ArrayList<>();
 
+//owning side -> The side that controls the relationship in the database.
     @ManyToOne(fetch = FetchType.LAZY)//delays loading the related User until it's actually needed, which is generally better for performance.
     @JoinColumn(name = "organizer_id") //tells which column should store the foreign key
     private User organizer;

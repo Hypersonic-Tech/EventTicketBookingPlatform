@@ -1,6 +1,6 @@
 package com.example.ETBPlatform.repository;
 
-import com.example.ETBPlatform.enity.User;
+import com.example.ETBPlatform.domain.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

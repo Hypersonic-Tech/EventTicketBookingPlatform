@@ -1,6 +1,6 @@
 package com.example.ETBPlatform.filters;
 
-import com.example.ETBPlatform.enity.User;
+import com.example.ETBPlatform.domain.entities.User;
 import com.example.ETBPlatform.repository.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

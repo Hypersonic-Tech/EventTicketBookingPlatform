@@ -1,4 +1,4 @@
-package com.example.ETBPlatform.enity;
+package com.example.ETBPlatform.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

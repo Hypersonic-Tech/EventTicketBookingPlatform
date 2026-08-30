@@ -1,4 +1,4 @@
-package com.example.ETBPlatform.enity;
+package com.example.ETBPlatform.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,25 +10,28 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "qr_code")
+@Table(name = "ticket_validations")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 
-public class QrCode {
+public class TicketValidation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id" , nullable = false , updatable = false)
     private UUID id;
 
-    @Column(name="status" , nullable = false)
+    @Column(name = "status" , nullable = false)
     @Enumerated(EnumType.STRING)
-    private QrCodeStatusEnum status;
+    private TicketValidationStatusEnum status;
 
-    @ManyToOne(fetch  = FetchType.LAZY)
+    @Column(name = "validation_method" , nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TicketValidationMethod validationMethod;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_id")
     private Ticket ticket;
 
@@ -43,8 +46,8 @@ public class QrCode {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        QrCode qrCode = (QrCode) o;
-        return Objects.equals(id, qrCode.id) && status == qrCode.status && Objects.equals(createdAt, qrCode.createdAt) && Objects.equals(updatedAt, qrCode.updatedAt);
+        TicketValidation that = (TicketValidation) o;
+        return Objects.equals(id, that.id) && status == that.status && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override

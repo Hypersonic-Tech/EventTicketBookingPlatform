@@ -1,8 +1,6 @@
 package com.example.ETBPlatform.domain;
 
-import com.example.ETBPlatform.domain.entities.EventStatusEnum;
-import com.example.ETBPlatform.domain.entities.TicketType;
-import com.example.ETBPlatform.domain.entities.User;
+import com.example.ETBPlatform.domain.enums.EventStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +19,7 @@ public class CreateEventRequest {
     private String venue;
     private LocalDateTime salesStart;
     private LocalDateTime salesEnd;
-    private EventStatusEnum status;
+    private EventStatus status;
     private List<CreateTicketTypeRequest>ticketTypes = new ArrayList<>();
 
 }

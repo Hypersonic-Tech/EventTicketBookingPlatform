@@ -1,5 +1,7 @@
 package com.example.ETBPlatform.domain.entities;
 
+import com.example.ETBPlatform.domain.enums.ValidationMethod;
+import com.example.ETBPlatform.domain.enums.ValidationStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -25,11 +27,11 @@ public class TicketValidation {
 
     @Column(name = "status" , nullable = false)
     @Enumerated(EnumType.STRING)
-    private TicketValidationStatusEnum status;
+    private ValidationStatus status;
 
     @Column(name = "validation_method" , nullable = false)
     @Enumerated(EnumType.STRING)
-    private TicketValidationMethod validationMethod;
+    private ValidationMethod validationMethod;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_id")

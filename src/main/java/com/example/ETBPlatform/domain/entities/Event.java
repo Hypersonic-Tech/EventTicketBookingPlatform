@@ -1,5 +1,6 @@
 package com.example.ETBPlatform.domain.entities;
 
+import com.example.ETBPlatform.domain.enums.EventStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -48,7 +49,7 @@ public class Event {
 
     @Column(name = "status" , nullable = false)
     @Enumerated(EnumType.STRING) //store an enum in the database as its name (String) instead of its numeric position (ordinal).
-    private EventStatusEnum status;
+    private EventStatus status;
 
     @OneToMany(mappedBy = "event" , cascade = CascadeType.ALL)
     private List<TicketType>ticketTypes = new ArrayList<>();

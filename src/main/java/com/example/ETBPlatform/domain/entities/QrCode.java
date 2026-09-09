@@ -1,5 +1,6 @@
 package com.example.ETBPlatform.domain.entities;
 
+import com.example.ETBPlatform.domain.enums.QrCodeStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -26,7 +27,7 @@ public class QrCode {
 
     @Column(name="status" , nullable = false)
     @Enumerated(EnumType.STRING)
-    private QrCodeStatusEnum status;
+    private QrCodeStatus status;
 
     @ManyToOne(fetch  = FetchType.LAZY)
     @JoinColumn(name = "ticket_id")

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="ATBT - Any Time Book Ticket">
+
+    <title>ATBT | Any Time Book Ticket</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+    >
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="auth-page">
+
+    <!-- ==========================================
+         BRAND SECTION
+    =========================================== -->
+
+    <section class="brand-section">
+
+        <div class="brand-content">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="brand-logo">
+
+                    <span class="logo-mark">
+                        A
+                    </span>
+
+                <span class="logo-name">
+                        ATBT
+                    </span>
+
+            </a>
+
+
+            <!-- Brand Content -->
+
+            <div class="brand-text">
+
+                <p class="brand-label">
+                    ANY TIME BOOK TICKET
+                </p>
+
+                <h1>
+                    Your next experience
+                    <span>starts here.</span>
+                </h1>
+
+                <p class="brand-description">
+                    Discover events, book tickets and create
+                    unforgettable experiences with ATBT.
+                </p>
+
+            </div>
+
+
+            <!-- Features -->
+
+            <div class="brand-features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Easy booking
+                        </strong>
+
+                        <span>
+                                Book your favorite events in seconds.
+                            </span>
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Secure tickets
+                        </strong>
+
+                        <span>
+                                Get digital tickets with QR validation.
+                            </span>
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Built for everyone
+                        </strong>
+
+                        <span>
+                                Attendees, organizers and event staff.
+                            </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Brand Footer -->
+
+        <div class="brand-footer">
+
+                <span>
+                    ATBT
+                </span>
+
+            <span>
+                    Any Time Book Ticket
+                </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         LOGIN SECTION
+    =========================================== -->
+
+    <section class="login-section">
+
+        <!-- Theme Toggle -->
+
+        <button
+                type="button"
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle theme"
+        >
+                <span id="themeIcon">
+                    ☾
+                </span>
+        </button>
+
+
+        <div class="login-container">
+
+
+            <!-- Mobile Logo -->
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="brand-logo">
+
+                        <span class="logo-mark">
+                            A
+                        </span>
+
+                    <span class="logo-name">
+                            ATBT
+                        </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Login Header -->
+
+            <div class="login-header">
+
+                <p class="welcome-text">
+                    WELCOME BACK
+                </p>
+
+                <h2>
+                    Sign in to ATBT
+                </h2>
+
+                <p>
+                    Enter your details to continue to your account.
+                </p>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 ROLE SELECTOR
+            =========================================== -->
+
+            <div class="role-section">
+
+                <label class="input-label">
+                    Login as
+                </label>
+
+
+                <div class="role-selector">
+
+
+                    <!-- Attendee -->
+
+                    <button
+                            type="button"
+                            class="role-option active"
+                            data-role="ATTENDEE"
+                    >
+
+                            <span class="role-icon">
+                                🎟
+                            </span>
+
+                        <span>
+                                Attendee
+                            </span>
+
+                    </button>
+
+
+                    <!-- Organizer -->
+
+                    <button
+                            type="button"
+                            class="role-option"
+                            data-role="ORGANIZER"
+                    >
+
+                            <span class="role-icon">
+                                ◈
+                            </span>
+
+                        <span>
+                                Organizer
+                            </span>
+
+                    </button>
+
+
+                    <!-- Staff -->
+
+                    <button
+                            type="button"
+                            class="role-option"
+                            data-role="STAFF"
+                    >
+
+                            <span class="role-icon">
+                                ✓
+                            </span>
+
+                        <span>
+                                Staff
+                            </span>
+
+                    </button>
+
+                </div>
+
+
+                <p class="selected-role">
+
+                    Signing in as:
+
+                    <strong id="selectedRole">
+                        Attendee
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 LOGIN FORM
+            =========================================== -->
+
+            <form id="loginForm" novalidate>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email address
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                @
+                            </span>
+
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                        >
+
+                    </div>
+
+
+                    <small
+                            class="error-message"
+                            id="emailError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <div class="password-label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <a
+                                href="#"
+                                class="forgot-password"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                ●
+                            </span>
+
+                        <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                        >
+
+
+                        <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <small
+                            class="error-message"
+                            id="passwordError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- Remember Me -->
+
+                <div class="form-options">
+
+                    <label class="checkbox-label">
+
+                        <input
+                                type="checkbox"
+                                id="rememberMe"
+                        >
+
+                        <span>
+                                Remember me
+                            </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- Login -->
+
+                <button
+                        type="submit"
+                        class="login-button"
+                        id="loginButton"
+                >
+
+                        <span id="loginButtonText">
+                            Sign in
+                        </span>
+
+                    <span
+                            class="spinner"
+                            id="loginSpinner"
+                    ></span>
+
+                </button>
+
+            </form>
+
+
+
+            <!-- Divider -->
+
+            <div class="divider">
+                    <span>
+                        OR
+                    </span>
+            </div>
+
+
+
+            <!-- Google -->
+
+            <button
+                    type="button"
+                    class="google-button"
+                    id="googleButton"
+            >
+
+                    <span class="google-icon">
+                        G
+                    </span>
+
+                <span>
+                        Continue with Google
+                    </span>
+
+            </button>
+
+
+
+            <!-- Register -->
+
+            <p class="register-text">
+
+                Don't have an account?
+
+                <a href="#">
+                    Create account
+                </a>
+
+            </p>
+
+
+
+            <!-- Footer -->
+
+            <div class="login-footer">
+
+                    <span>
+                        © 2026 ATBT
+                    </span>
+
+                <span>
+                        Secure ticket booking
+                    </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Global JavaScript -->
+<script src="script.js"></script>
+
+</body>
+
+</html>

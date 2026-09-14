@@ -12,10 +12,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AuthResponse {
 
-    private String token;
-
-    private String tokenType;
-
     private UUID userId;
 
     private String email;
@@ -25,4 +21,6 @@ public class AuthResponse {
     private String lastName;
 
     private Role role;
+
+    private String token;
 }

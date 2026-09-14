@@ -1,9 +1,8 @@
 package com.example.ETBPlatform.domain.enums;
 
-public enum TicketStatus {
-    RESERVED,
+public enum BookingStatus {
+    PENDING,
     CONFIRMED,
     CANCELLED,
-    USED,
     EXPIRED
 }

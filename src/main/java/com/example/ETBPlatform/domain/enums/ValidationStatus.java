@@ -1,5 +1,10 @@
 package com.example.ETBPlatform.domain.enums;
 
 public enum ValidationStatus {
-    VALID , INVALID , EXPIRED
+    SUCCESS,
+    INVALID,
+    ALREADY_USED,
+    EXPIRED,
+    NOT_ASSIGNED,
+    CANCELLED
 }

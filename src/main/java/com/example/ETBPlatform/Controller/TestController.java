@@ -12,4 +12,19 @@ public class TestController {
     public String protectedEndpoint() {
         return "JWT authentication is working!";
     }
+
+    @GetMapping("/attendee")
+    public String attendeeEndpoint() {
+        return "Welcome Attendee!";
+    }
+
+    @GetMapping("/organizer")
+    public String organizerEndpoint() {
+        return "Welcome Organizer!";
+    }
+
+    @GetMapping("/staff")
+    public String staffEndpoint() {
+        return "Welcome Staff!";
+    }
 }

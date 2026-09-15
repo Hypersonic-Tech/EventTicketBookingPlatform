@@ -1,5 +1,6 @@
 package com.example.ETBPlatform.domain.dtos.auth;
 
+import com.example.ETBPlatform.domain.enums.AuthProvider;
 import com.example.ETBPlatform.domain.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,6 +22,8 @@ public class AuthResponse {
     private String lastName;
 
     private Role role;
+
+    private AuthProvider authProvider;
 
     private String token;
 }

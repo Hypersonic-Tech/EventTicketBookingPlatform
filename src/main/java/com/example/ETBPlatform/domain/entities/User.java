@@ -3,6 +3,7 @@ package com.example.ETBPlatform.domain.entities;
 import com.example.ETBPlatform.domain.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
+import com.example.ETBPlatform.domain.enums.AuthProvider;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -25,7 +26,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column
     private String password;
 
     @Column(nullable = false)
@@ -37,6 +38,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private AuthProvider authProvider;
 
     @Column(nullable = false)
     private boolean enabled = true;

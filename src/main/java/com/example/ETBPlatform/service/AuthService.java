@@ -4,6 +4,7 @@ import com.example.ETBPlatform.domain.dtos.auth.AuthResponse;
 import com.example.ETBPlatform.domain.dtos.auth.LoginRequest;
 import com.example.ETBPlatform.domain.dtos.auth.RegisterRequest;
 import com.example.ETBPlatform.domain.entities.User;
+import com.example.ETBPlatform.domain.enums.AuthProvider;
 import com.example.ETBPlatform.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,6 +31,7 @@ public class AuthService {
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
                 .role(request.getRole())
+                .authProvider(AuthProvider.LOCAL)
                 .enabled(true)
                 .build();
 
@@ -41,6 +43,7 @@ public class AuthService {
                 .firstName(savedUser.getFirstName())
                 .lastName(savedUser.getLastName())
                 .role(savedUser.getRole())
+                .authProvider(savedUser.getAuthProvider())
                 .build();
     }
 
@@ -68,6 +71,7 @@ public class AuthService {
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
                 .role(user.getRole())
+                .authProvider(user.getAuthProvider())
                 .token(token)
                 .build();
     }

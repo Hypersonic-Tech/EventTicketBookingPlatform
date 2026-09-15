@@ -1,6 +1,10 @@
 package com.example.ETBPlatform.config;
 
+import  com.example.ETBPlatform.config.GoogleOAuth2SuccessHandler;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,14 +15,16 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
-
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
+
+    private final GoogleOAuth2SuccessHandler googleOAuth2SuccessHandler;
 
     @Value("${jwt.secret}")
     private String jwtSecret;
@@ -54,10 +60,13 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(
+            HttpSecurity http) throws Exception {
 
         http
                 .csrf(csrf -> csrf.disable())
+
+                .cors(cors -> {})
 
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(
@@ -69,7 +78,9 @@ public class SecurityConfig {
 
                         .requestMatchers(
                                 "/api/auth/register",
-                                "/api/auth/login"
+                                "/api/auth/login",
+                                "/oauth2/**",
+                                "/login/**"
                         ).permitAll()
 
                         .anyRequest().authenticated()
@@ -81,6 +92,14 @@ public class SecurityConfig {
                                         jwtAuthenticationConverter()
                                 )
                         )
+                )
+
+                .oauth2Login(oauth2 ->
+                        oauth2
+                                .loginPage("/oauth2/authorization/google")
+                                .successHandler(
+                                        googleOAuth2SuccessHandler
+                                )
                 );
 
         return http.build();

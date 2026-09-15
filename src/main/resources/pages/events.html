@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ATBT - Events</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/events.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="events-navbar">
+
+    <div class="navbar-container">
+
+        <a href="events.html" class="atbt-logo">
+            <span class="logo-icon">A</span>
+            <span>ATBT</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="events.html" class="active">Events</a>
+            <a href="my-tickets.html">My Tickets</a>
+        </nav>
+
+        <div class="navbar-actions">
+
+            <button id="themeToggle"
+                    class="icon-button"
+                    title="Toggle theme">
+                🌙
+            </button>
+
+            <div class="user-menu">
+
+                <button id="userButton" class="user-button">
+
+                    <div class="user-avatar" id="userAvatar">
+                        A
+                    </div>
+
+                    <div class="user-info">
+                        <span id="userName">Attendee</span>
+                        <small id="userRole">ATTENDEE</small>
+                    </div>
+
+                    <span class="dropdown-arrow">⌄</span>
+
+                </button>
+
+                <div id="userDropdown" class="user-dropdown">
+
+                    <a href="#">My Profile</a>
+                    <a href="my-tickets.html">My Tickets</a>
+
+                    <hr>
+
+                    <button id="logoutButton">
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="events-hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            🎟️ ANY TIME BOOK TICKET
+        </span>
+
+        <h1>
+            Discover your next
+            <span>experience.</span>
+        </h1>
+
+        <p>
+            Find amazing events, book your tickets,
+            and create unforgettable memories.
+        </p>
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <span class="search-icon">⌕</span>
+
+            <input
+                    type="text"
+                    id="eventSearch"
+                    placeholder="Search events, artists, venues..."
+                    autocomplete="off"
+            >
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="events-main">
+
+    <!-- Categories -->
+
+    <section class="category-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">EXPLORE</span>
+
+                <h2>
+                    Browse by category
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="category-list">
+
+            <button class="category-btn active"
+                    data-category="ALL">
+                <span>✨</span>
+                All
+            </button>
+
+            <button class="category-btn"
+                    data-category="MUSIC">
+                <span>🎵</span>
+                Music
+            </button>
+
+            <button class="category-btn"
+                    data-category="SPORTS">
+                <span>🏆</span>
+                Sports
+            </button>
+
+            <button class="category-btn"
+                    data-category="TECHNOLOGY">
+                <span>💻</span>
+                Technology
+            </button>
+
+            <button class="category-btn"
+                    data-category="CONFERENCE">
+                <span>🎤</span>
+                Conference
+            </button>
+
+            <button class="category-btn"
+                    data-category="COMEDY">
+                <span>😂</span>
+                Comedy
+            </button>
+
+            <button class="category-btn"
+                    data-category="OTHER">
+                <span>🎪</span>
+                Other
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Upcoming Events -->
+
+    <section class="events-section">
+
+        <div class="section-header events-heading">
+
+            <div>
+
+                <span class="section-label">
+                    DON'T MISS OUT
+                </span>
+
+                <h2>
+                    Upcoming events
+                </h2>
+
+            </div>
+
+            <span id="eventCount" class="event-count">
+                0 events
+            </span>
+
+        </div>
+
+
+        <!-- Loading -->
+
+        <div id="eventsLoading" class="events-loading">
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Discovering amazing events...
+            </p>
+
+        </div>
+
+
+        <!-- Event Cards -->
+
+        <div id="eventsGrid" class="events-grid"></div>
+
+
+        <!-- No results -->
+
+        <div id="noEvents" class="no-events hidden">
+
+            <div class="no-events-icon">
+                🎟️
+            </div>
+
+            <h3>
+                No events found
+            </h3>
+
+            <p>
+                Try another search or category.
+            </p>
+
+            <button id="clearFilters">
+                Clear filters
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="events-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <div class="atbt-logo">
+                <span class="logo-icon">A</span>
+                <span>ATBT</span>
+            </div>
+
+            <p>
+                Any Time Book Ticket
+            </p>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ATBT. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="../static/js/events.js"></script>
+</body>
+</html>

@@ -438,7 +438,6 @@ function clearErrors() {
 
 }
 
-
 /* =====================================================
    GOOGLE OAUTH
 ===================================================== */
@@ -455,21 +454,74 @@ if (googleButton) {
         "click",
         () => {
 
-            /*
-                Google OAuth2 will be connected
-                to Spring Boot later.
-
-                Future example:
-
-                window.location.href =
-                    "http://localhost:8080/oauth2/authorization/google";
-            */
-
-            console.log(
-                "Google OAuth2 will be connected later."
-            );
+            window.location.href =
+                "http://localhost:8080/oauth2/authorization/google";
 
         }
     );
+    const loginForm = document.getElementById("loginForm");
 
-}z
+    if (loginForm) {
+        loginForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                alert("Please enter email and password.");
+                return;
+            }
+
+            try {
+                const response = await fetch(
+                    "http://localhost:8080/api/auth/login",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            password: password
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    alert(data.message || "Invalid email or password.");
+                    return;
+                }
+
+                // Save JWT
+                localStorage.setItem("atbt_token", data.token);
+
+                // Save user information
+                localStorage.setItem(
+                    "atbt_user",
+                    JSON.stringify({
+                        userId: data.userId,
+                        email: data.email,
+                        firstName: data.firstName,
+                        lastName: data.lastName,
+                        role: data.role,
+                        authProvider: data.authProvider
+                    })
+                );
+
+                // Go to events page
+                window.location.href =
+                    "http://localhost:63342/ETBPlatform/pages/events.html";
+
+            } catch (error) {
+                console.error("Login error:", error);
+                alert(
+                    "Unable to connect to server. Make sure Spring Boot is running."
+                );
+            }
+        });
+    }
+
+}

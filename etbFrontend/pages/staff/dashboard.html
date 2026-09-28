@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Staff Dashboard | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/organizer.css"
+    >
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <a
+        href="../../index.html"
+        class="brand"
+    >
+        <span class="brand-mark">E</span>
+
+        <span class="brand-name">
+            EVENT<span>X</span>
+        </span>
+    </a>
+
+
+    <div class="dashboard-nav-right">
+
+        <span class="dashboard-role">
+            STAFF
+        </span>
+
+        <button
+            type="button"
+            id="logoutButton"
+            class="dashboard-logout"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="staff-dashboard-container">
+
+    <!-- HEADER -->
+
+    <section class="staff-dashboard-hero">
+
+        <div>
+
+            <span class="eyebrow">
+                EVENT STAFF
+            </span>
+
+            <h1>
+                Ready to<br>
+                <span>check in.</span>
+            </h1>
+
+            <p>
+                Manage your assigned events and
+                validate attendee tickets at the gate.
+            </p>
+
+        </div>
+
+
+        <div class="staff-live-indicator">
+
+            <span class="live-dot"></span>
+
+            STAFF ACCESS ACTIVE
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK STATS -->
+
+    <section class="staff-stats">
+
+        <div class="staff-stat-card">
+
+            <span>
+                ASSIGNED EVENTS
+            </span>
+
+            <strong id="assignedEventCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="staff-stat-card">
+
+            <span>
+                CHECKED IN
+            </span>
+
+            <strong id="checkedInCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="staff-stat-card">
+
+            <span>
+                TODAY
+            </span>
+
+            <strong id="todayEventCount">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENTS -->
+
+    <section class="staff-events-section">
+
+        <div class="staff-section-header">
+
+            <div>
+
+                <span class="panel-number">
+                    01
+                </span>
+
+                <h2>
+                    Assigned events
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                id="refreshEventsButton"
+                class="btn btn-secondary"
+            >
+                Refresh
+            </button>
+
+        </div>
+
+
+        <div
+            id="staffEventsList"
+            class="staff-events-list"
+        >
+
+            <div class="dashboard-loading">
+                Loading assigned events...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../../js/core/api.js"></script>
+<script src="../../js/core/auth.js"></script>
+
+<script src="../../js/services/staffService.js"></script>
+
+<script src="../../js/pages/staffDashboard.js"></script>
+
+</body>
+
+</html>

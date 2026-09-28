@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Staff Management | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/organizer.css">
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <a href="../../index.html" class="brand">
+        <span class="brand-mark">E</span>
+        <span class="brand-name">EVENT<span>X</span></span>
+    </a>
+
+    <div class="dashboard-nav-right">
+
+        <span class="dashboard-role">
+            ORGANIZER
+        </span>
+
+        <a href="dashboard.html" class="dashboard-back">
+            ← Dashboard
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="organizer-staff-container">
+
+    <!-- PAGE HEADER -->
+
+    <section class="organizer-page-header">
+
+        <div>
+
+            <span class="eyebrow">
+                ORGANIZER / STAFF
+            </span>
+
+            <h1>
+                Your <span>team.</span>
+            </h1>
+
+            <p>
+                Manage the staff members responsible for
+                handling your events and guest entry.
+            </p>
+
+        </div>
+
+        <div class="staff-header-stat">
+
+            <span>
+                ACTIVE STAFF
+            </span>
+
+            <strong id="staffCount">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="staff-toolbar">
+
+        <div class="staff-search">
+
+            <span class="search-icon">
+                /
+            </span>
+
+            <input
+                id="staffSearch"
+                type="search"
+                placeholder="Search staff by name or email..."
+                autocomplete="off"
+            >
+
+        </div>
+
+        <button
+            type="button"
+            id="refreshStaffButton"
+            class="btn btn-secondary"
+        >
+            Refresh
+        </button>
+
+    </section>
+
+
+    <!-- MESSAGE -->
+
+    <div
+        id="staffPageMessage"
+        class="form-message"
+    ></div>
+
+
+    <!-- STAFF LIST -->
+
+    <section>
+
+        <div class="staff-section-heading">
+
+            <div>
+
+                <span class="panel-number">
+                    01
+                </span>
+
+                <h2>
+                    Staff members
+                </h2>
+
+            </div>
+
+            <span id="staffResultCount">
+                0 members
+            </span>
+
+        </div>
+
+
+        <div
+            id="staffManagementList"
+            class="staff-management-list"
+        >
+
+            <div class="dashboard-loading">
+                Loading staff...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ASSIGN MODAL -->
+
+<div
+    id="assignEventModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="staff-modal staff-assignment-modal">
+
+        <button
+            type="button"
+            id="closeAssignModal"
+            class="modal-close"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <span class="eyebrow">
+            ASSIGN STAFF
+        </span>
+
+        <h2>
+            Choose an event
+        </h2>
+
+        <p>
+            Select the event where this staff member
+            should handle guest entry.
+        </p>
+
+
+        <div
+            id="assignmentStaffName"
+            class="assignment-staff-name"
+        >
+            Staff member
+        </div>
+
+
+        <form id="assignEventForm">
+
+            <div class="form-group">
+
+                <label for="eventSelect">
+                    Event
+                </label>
+
+                <select
+                    id="eventSelect"
+                    name="eventId"
+                    required
+                >
+
+                    <option value="">
+                        Select an event
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="assignmentMessage"
+                class="form-message"
+            ></div>
+
+
+            <button
+                type="submit"
+                id="assignEventSubmit"
+                class="btn btn-primary"
+            >
+                Assign to Event
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/core/api.js"></script>
+<script src="../../js/core/auth.js"></script>
+
+<script src="../../js/services/organizerService.js"></script>
+<script src="../../js/services/eventService.js"></script>
+
+<script src="../../js/pages/organizerStaff.js"></script>
+
+</body>
+</html>

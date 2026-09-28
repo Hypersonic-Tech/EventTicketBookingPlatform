@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-layout">
+
+        <section class="auth-brand-panel">
+
+            <a href="../index.html" class="brand">
+                <span class="brand-mark">E</span>
+                <span class="brand-name">EVENT<span>X</span></span>
+            </a>
+
+            <div class="auth-brand-content">
+
+                <span class="eyebrow">
+                    JOIN THE EXPERIENCE
+                </span>
+
+                <h1>
+                    CREATE.
+                    <span>CONNECT.</span>
+                    EXPERIENCE.
+                </h1>
+
+                <p>
+                    Join thousands of people discovering,
+                    creating and attending memorable events.
+                </p>
+
+            </div>
+
+            <div class="auth-decoration">
+                <span>02</span>
+                <span>EVENTX</span>
+            </div>
+
+        </section>
+
+
+        <section class="auth-form-panel">
+
+            <div class="auth-form-container">
+
+                <div class="auth-heading">
+
+                    <span class="eyebrow">
+                        CREATE ACCOUNT
+                    </span>
+
+                    <h2>Let's get started.</h2>
+
+                    <p>
+                        Create your EVENTX account.
+                    </p>
+
+                </div>
+
+
+                <form id="signupForm" class="auth-form">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                placeholder="Aditya"
+                                autocomplete="given-name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                placeholder="Jain"
+                                autocomplete="family-name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Minimum 8 characters"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="role">
+                            I want to
+                        </label>
+
+                        <select id="role" name="role">
+
+                            <option value="ATTENDEE">
+                                Attend events
+                            </option>
+
+                            <option value="ORGANIZER">
+                                Organize events
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div
+                        id="signupMessage"
+                        class="form-message"
+                        role="alert"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        id="signupButton"
+                        class="btn btn-primary auth-submit"
+                    >
+                        <span class="button-text">
+                            Create Account
+                        </span>
+
+                        <span class="button-loader">
+                            Creating...
+                        </span>
+                    </button>
+
+                </form>
+
+
+                <p class="auth-footer-text">
+                    Already have an account?
+                    <a href="login.html">Sign in</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/core/api.js"></script>
+    <script src="../js/core/auth.js"></script>
+    <script src="../js/core/router.js"></script>
+    <script src="../js/services/authService.js"></script>
+    <script src="../js/pages/signup.js"></script>
+
+</body>
+
+</html>

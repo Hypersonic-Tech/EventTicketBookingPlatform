@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Tickets | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/ticket.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+<header class="dashboard-navbar">
+
+    <div class="dashboard-navbar-inner">
+
+        <a
+            href="../../index.html"
+            class="brand"
+        >
+
+            <span class="brand-mark">
+                E
+            </span>
+
+            <span class="brand-name">
+                EVENT<span>X</span>
+            </span>
+
+        </a>
+
+
+        <nav class="dashboard-nav">
+
+            <a href="dashboard.html">
+                Overview
+            </a>
+
+            <a href="../events.html">
+                Discover
+            </a>
+
+            <a
+                href="tickets.html"
+                class="active"
+            >
+                My Tickets
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <div class="dashboard-user">
+
+            <div
+                class="user-avatar"
+                id="userAvatar"
+            >
+                A
+            </div>
+
+            <div class="user-info">
+
+                <span id="userName">
+                    User
+                </span>
+
+                <small>
+                    Attendee
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard-main">
+
+    <section class="dashboard-welcome">
+
+        <div>
+
+            <span class="eyebrow">
+                YOUR EXPERIENCES
+            </span>
+
+            <h1>
+                My <span>Tickets.</span>
+            </h1>
+
+            <p>
+                Everything you've booked,
+                all in one place.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <div
+            id="ticketList"
+            class="my-ticket-list"
+        >
+
+            Loading tickets...
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../../js/core/api.js"></script>
+<script src="../../js/core/auth.js"></script>
+<script src="../../js/core/router.js"></script>
+
+<script src="../../js/services/ticketService.js"></script>
+
+<script src="../../js/pages/myTickets.js"></script>
+
+</body>
+
+</html>

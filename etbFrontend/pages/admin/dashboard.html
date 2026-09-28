@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body>
+
+<header class="admin-navbar">
+
+    <a
+        href="../../index.html"
+        class="brand"
+    >
+        <span class="brand-mark">E</span>
+
+        <span class="brand-name">
+            EVENT<span>X</span>
+        </span>
+    </a>
+
+
+    <nav class="admin-nav">
+
+        <a
+            href="dashboard.html"
+            class="active"
+        >
+            Dashboard
+        </a>
+
+        <a href="users.html">
+            Users
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="venues.html">
+            Venues
+        </a>
+
+    </nav>
+
+
+    <div class="admin-nav-right">
+
+        <span class="admin-role">
+            ADMIN
+        </span>
+
+        <button
+            type="button"
+            id="logoutButton"
+            class="dashboard-logout"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="admin-container">
+
+    <!-- HERO -->
+
+    <section class="admin-hero">
+
+        <div>
+
+            <span class="eyebrow">
+                PLATFORM CONTROL
+            </span>
+
+            <h1>
+                Control<br>
+                <span>everything.</span>
+            </h1>
+
+            <p>
+                Monitor users, events and venues
+                across the entire EVENTX platform.
+            </p>
+
+        </div>
+
+
+        <div class="admin-system-status">
+
+            <span class="system-dot"></span>
+
+            SYSTEM OPERATIONAL
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="admin-stat-grid">
+
+        <article class="admin-stat-card">
+
+            <span>
+                TOTAL USERS
+            </span>
+
+            <strong id="totalUsers">
+                —
+            </strong>
+
+            <small>
+                Platform accounts
+            </small>
+
+        </article>
+
+
+        <article class="admin-stat-card">
+
+            <span>
+                TOTAL EVENTS
+            </span>
+
+            <strong id="totalEvents">
+                —
+            </strong>
+
+            <small>
+                Created events
+            </small>
+
+        </article>
+
+
+        <article class="admin-stat-card">
+
+            <span>
+                VENUES
+            </span>
+
+            <strong id="totalVenues">
+                —
+            </strong>
+
+            <small>
+                Registered locations
+            </small>
+
+        </article>
+
+
+        <article class="admin-stat-card accent">
+
+            <span>
+                ACTIVE USERS
+            </span>
+
+            <strong id="activeUsers">
+                —
+            </strong>
+
+            <small>
+                Currently enabled
+            </small>
+
+        </article>
+
+    </section>
+
+
+    <!-- MANAGEMENT -->
+
+    <section class="admin-management-section">
+
+        <div class="admin-section-header">
+
+            <div>
+
+                <span class="panel-number">
+                    01
+                </span>
+
+                <h2>
+                    Platform management
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-management-grid">
+
+            <a
+                href="users.html"
+                class="admin-management-card"
+            >
+
+                <span class="management-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Users
+                    </h3>
+
+                    <p>
+                        Manage attendees, organizers
+                        and staff accounts.
+                    </p>
+
+                </div>
+
+                <span class="management-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a
+                href="events.html"
+                class="admin-management-card"
+            >
+
+                <span class="management-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Events
+                    </h3>
+
+                    <p>
+                        Monitor and manage all
+                        platform events.
+                    </p>
+
+                </div>
+
+                <span class="management-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a
+                href="venues.html"
+                class="admin-management-card"
+            >
+
+                <span class="management-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Venues
+                    </h3>
+
+                    <p>
+                        Maintain event locations
+                        and capacity information.
+                    </p>
+
+                </div>
+
+                <span class="management-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECENT ACTIVITY -->
+
+    <section class="admin-activity-section">
+
+        <div class="admin-section-header">
+
+            <div>
+
+                <span class="panel-number">
+                    02
+                </span>
+
+                <h2>
+                    Recent activity
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="adminActivityList"
+            class="admin-activity-list"
+        >
+
+            <div class="dashboard-loading">
+                Loading activity...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../../js/core/api.js"></script>
+<script src="../../js/core/auth.js"></script>
+
+<script src="../../js/services/adminService.js"></script>
+
+<script src="../../js/pages/adminDashboard.js"></script>
+
+</body>
+
+</html>

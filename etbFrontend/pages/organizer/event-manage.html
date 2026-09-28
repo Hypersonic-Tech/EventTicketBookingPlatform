@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Event | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/organizer.css">
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <a href="../../index.html" class="brand">
+        <span class="brand-mark">E</span>
+        <span class="brand-name">EVENT<span>X</span></span>
+    </a>
+
+    <div class="dashboard-nav-right">
+
+        <span class="dashboard-role">
+            ORGANIZER
+        </span>
+
+        <a href="events.html" class="dashboard-back">
+            ← My Events
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="event-manage-container">
+
+    <!-- Loading -->
+    <div
+        id="eventLoading"
+        class="dashboard-loading"
+    >
+        Loading event...
+    </div>
+
+
+    <!-- Main content -->
+    <div
+        id="eventContent"
+        class="event-manage-content hidden"
+    >
+
+        <!-- Header -->
+
+        <section class="event-manage-header">
+
+            <div>
+
+                <span
+                    class="eyebrow"
+                    id="eventStatus"
+                >
+                    EVENT
+                </span>
+
+                <h1 id="eventName">
+                    Event Name
+                </h1>
+
+                <p id="eventDescription">
+                    Event description
+                </p>
+
+            </div>
+
+
+            <div class="event-manage-actions">
+
+                <a
+                    href="#"
+                    id="editEventButton"
+                    class="btn btn-secondary"
+                >
+                    Edit Event
+                </a>
+
+                <button
+                    type="button"
+                    id="cancelEventButton"
+                    class="btn btn-danger-outline"
+                >
+                    Cancel Event
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Event information -->
+
+        <section class="event-manage-grid">
+
+            <article class="manage-panel">
+
+                <div class="manage-panel-header">
+
+                    <span class="panel-number">
+                        01
+                    </span>
+
+                    <div>
+                        <h2>Event information</h2>
+                        <p>Core details of your event.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="event-info-list">
+
+                    <div class="event-info-item">
+
+                        <span>DATE</span>
+
+                        <strong id="eventDate">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="event-info-item">
+
+                        <span>TIME</span>
+
+                        <strong id="eventTime">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="event-info-item">
+
+                        <span>VENUE</span>
+
+                        <strong id="eventVenue">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="event-info-item">
+
+                        <span>LOCATION</span>
+
+                        <strong id="eventLocation">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Statistics -->
+
+            <article class="manage-panel">
+
+                <div class="manage-panel-header">
+
+                    <span class="panel-number">
+                        02
+                    </span>
+
+                    <div>
+                        <h2>Event overview</h2>
+                        <p>Track your event performance.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="event-stat-grid">
+
+                    <div class="event-stat">
+
+                        <span>
+                            TICKETS SOLD
+                        </span>
+
+                        <strong id="ticketsSold">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="event-stat">
+
+                        <span>
+                            CAPACITY
+                        </span>
+
+                        <strong id="ticketCapacity">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="event-stat">
+
+                        <span>
+                            CHECKED IN
+                        </span>
+
+                        <strong id="checkedIn">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="event-stat">
+
+                        <span>
+                            REVENUE
+                        </span>
+
+                        <strong id="eventRevenue">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- Staff -->
+
+        <section class="manage-panel staff-panel">
+
+            <div class="manage-panel-header staff-header">
+
+                <div class="staff-heading">
+
+                    <span class="panel-number">
+                        03
+                    </span>
+
+                    <div>
+                        <h2>Event staff</h2>
+
+                        <p>
+                            Staff members assigned to this event.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="assignStaffButton"
+                    class="btn btn-primary"
+                >
+                    + Assign Staff
+                </button>
+
+            </div>
+
+
+            <div
+                id="eventStaffList"
+                class="staff-list"
+            >
+
+                <div class="dashboard-loading">
+                    Loading staff...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Message -->
+
+        <div
+            id="eventMessage"
+            class="form-message"
+        ></div>
+
+    </div>
+
+
+    <!-- Error -->
+
+    <div
+        id="eventError"
+        class="dashboard-error hidden"
+    ></div>
+
+</main>
+
+
+<!-- Assign staff modal -->
+
+<div
+    id="staffModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="staff-modal">
+
+        <button
+            type="button"
+            id="closeStaffModal"
+            class="modal-close"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <span class="eyebrow">
+            EVENT STAFF
+        </span>
+
+        <h2>
+            Assign staff
+        </h2>
+
+        <p>
+            Enter the staff member's ID to assign them to this event.
+        </p>
+
+
+        <form id="assignStaffForm">
+
+            <div class="form-group">
+
+                <label for="staffId">
+                    Staff ID
+                </label>
+
+                <input
+                    id="staffId"
+                    name="staffId"
+                    type="text"
+                    placeholder="Enter staff UUID"
+                    required
+                >
+
+            </div>
+
+
+            <div
+                id="staffMessage"
+                class="form-message"
+            ></div>
+
+
+            <button
+                type="submit"
+                id="assignStaffSubmit"
+                class="btn btn-primary"
+            >
+                Assign Staff
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/core/api.js"></script>
+<script src="../../js/core/auth.js"></script>
+<script src="../../js/services/eventService.js"></script>
+<script src="../../js/services/organizerService.js"></script>
+<script src="../../js/pages/eventManage.js"></script>
+
+</body>
+</html>

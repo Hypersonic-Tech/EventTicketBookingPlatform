@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-layout">
+
+        <section class="auth-brand-panel">
+
+            <a href="../index.html" class="brand">
+                <span class="brand-mark">E</span>
+                <span class="brand-name">EVENT<span>X</span></span>
+            </a>
+
+            <div class="auth-brand-content">
+
+                <span class="eyebrow">WELCOME BACK</span>
+
+                <h1>
+                    YOUR NEXT
+                    <span>EXPERIENCE</span>
+                    AWAITS.
+                </h1>
+
+                <p>
+                    Sign in and get back to discovering,
+                    creating and managing unforgettable events.
+                </p>
+
+            </div>
+
+            <div class="auth-decoration">
+                <span>01</span>
+                <span>EVENTX</span>
+            </div>
+
+        </section>
+
+
+        <section class="auth-form-panel">
+
+            <div class="auth-form-container">
+
+                <div class="auth-heading">
+
+                    <span class="eyebrow">ACCOUNT ACCESS</span>
+
+                    <h2>Welcome back.</h2>
+
+                    <p>
+                        Enter your details to continue.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm" class="auth-form">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div
+                        id="loginError"
+                        class="form-message error-message"
+                        role="alert"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="btn btn-primary auth-submit"
+                    >
+                        <span class="button-text">
+                            Sign In
+                        </span>
+
+                        <span class="button-loader">
+                            Signing In...
+                        </span>
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="oauth-button"
+                    id="googleLoginButton"
+                >
+                    <span class="google-icon">G</span>
+                    Continue with Google
+                </button>
+
+
+                <p class="auth-footer-text">
+                    Don't have an account?
+                    <a href="signup.html">Create one</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/core/api.js"></script>
+    <script src="../js/core/auth.js"></script>
+    <script src="../js/core/router.js"></script>
+    <script src="../js/services/authService.js"></script>
+    <script src="../js/pages/login.js"></script>
+
+</body>
+
+</html>

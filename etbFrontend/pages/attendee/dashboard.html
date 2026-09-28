@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+
+<body class="dashboard-page">
+
+<header class="dashboard-navbar">
+
+    <div class="dashboard-navbar-inner">
+
+        <a href="../../index.html" class="brand">
+            <span class="brand-mark">E</span>
+            <span class="brand-name">EVENT<span>X</span></span>
+        </a>
+
+        <nav class="dashboard-nav">
+
+            <a href="dashboard.html" class="active">
+                Overview
+            </a>
+
+            <a href="../events.html">
+                Discover
+            </a>
+
+            <a href="tickets.html">
+                My Tickets
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+        <div class="dashboard-user">
+
+            <div class="user-avatar" id="userAvatar">
+                A
+            </div>
+
+            <div class="user-info">
+
+                <span id="userName">
+                    User
+                </span>
+
+                <small>
+                    Attendee
+                </small>
+
+            </div>
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard-main">
+
+    <!-- =========================
+         WELCOME
+    ========================== -->
+
+    <section class="dashboard-welcome">
+
+        <div>
+
+            <span class="eyebrow">
+                ATTENDEE DASHBOARD
+            </span>
+
+            <h1>
+                Welcome back,
+                <span id="welcomeName">Aditya</span>.
+            </h1>
+
+            <p>
+                Your next experience is waiting for you.
+            </p>
+
+        </div>
+
+        <a
+            href="../events.html"
+            class="btn btn-primary"
+        >
+            Discover Events
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <section class="dashboard-stats">
+
+        <article class="stat-card">
+
+            <span class="stat-label">
+                UPCOMING
+            </span>
+
+            <strong id="upcomingCount">
+                0
+            </strong>
+
+            <span class="stat-description">
+                Events you're attending
+            </span>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <span class="stat-label">
+                TICKETS
+            </span>
+
+            <strong id="ticketCount">
+                0
+            </strong>
+
+            <span class="stat-description">
+                Tickets purchased
+            </span>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <span class="stat-label">
+                ATTENDED
+            </span>
+
+            <strong id="attendedCount">
+                0
+            </strong>
+
+            <span class="stat-description">
+                Events you've attended
+            </span>
+
+        </article>
+
+    </section>
+
+
+    <!-- =========================
+         NEXT EVENT
+    ========================== -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading-row">
+
+            <div>
+
+                <span class="eyebrow">
+                    YOUR NEXT EXPERIENCE
+                </span>
+
+                <h2>
+                    Upcoming Event
+                </h2>
+
+            </div>
+
+            <a href="tickets.html" class="text-link">
+                View all tickets →
+            </a>
+
+        </div>
+
+
+        <div
+            id="nextEventContainer"
+            class="next-event-card"
+        >
+
+            <div class="empty-state">
+
+                <span class="empty-icon">
+                    +
+                </span>
+
+                <h3>
+                    No upcoming events
+                </h3>
+
+                <p>
+                    Discover an event and book your next experience.
+                </p>
+
+                <a
+                    href="../events.html"
+                    class="btn btn-secondary"
+                >
+                    Explore Events
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RECOMMENDED
+    ========================== -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading-row">
+
+            <div>
+
+                <span class="eyebrow">
+                    DISCOVER
+                </span>
+
+                <h2>
+                    Events You Might Like
+                </h2>
+
+            </div>
+
+            <a
+                href="../events.html"
+                class="text-link"
+            >
+                Explore all →
+            </a>
+
+        </div>
+
+
+        <div
+            id="recommendedEvents"
+            class="dashboard-event-grid"
+        >
+
+            <div class="dashboard-loading">
+                Loading events...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../../js/core/api.js"></script>
+<script src="../../js/core/auth.js"></script>
+<script src="../../js/core/router.js"></script>
+
+<script src="../../js/services/eventService.js"></script>
+
+<script src="../../js/pages/attendeeDashboard.js"></script>
+
+</body>
+
+</html>

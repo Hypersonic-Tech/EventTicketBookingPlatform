@@ -1,0 +1,77 @@
+<main class="dashboard-container">
+
+    <section class="dashboard-header">
+
+        <div>
+            <span class="eyebrow">EVENT MANAGEMENT</span>
+
+            <h1>Your events.</h1>
+
+            <p>
+                Everything you're organizing, in one place.
+            </p>
+        </div>
+
+        <a
+            href="create-event.html"
+            class="btn btn-primary"
+        >
+            + Create Event
+        </a>
+
+    </section>
+
+
+    <section class="organizer-events-toolbar">
+
+        <div class="event-filter-tabs">
+
+            <button
+                type="button"
+                class="event-tab active"
+                data-filter="ALL"
+            >
+                All
+            </button>
+
+            <button
+                type="button"
+                class="event-tab"
+                data-filter="UPCOMING"
+            >
+                Upcoming
+            </button>
+
+            <button
+                type="button"
+                class="event-tab"
+                data-filter="ACTIVE"
+            >
+                Active
+            </button>
+
+            <button
+                type="button"
+                class="event-tab"
+                data-filter="COMPLETED"
+            >
+                Completed
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="organizerEvents"
+        class="organizer-events-grid"
+    >
+
+        <div class="dashboard-loading">
+            Loading events...
+        </div>
+
+    </section>
+
+</main>

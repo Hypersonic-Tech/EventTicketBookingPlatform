@@ -1,0 +1,360 @@
+.auth-page {
+    min-height: 100vh;
+    background: var(--black);
+}
+
+.auth-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================
+   BRAND PANEL
+========================= */
+
+.auth-brand-panel {
+    position: relative;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(229, 9, 20, 0.15),
+            transparent 35%
+        ),
+        var(--black-soft);
+
+    border-right: 1px solid var(--border);
+}
+
+.auth-brand-content {
+    max-width: 620px;
+    position: relative;
+    z-index: 2;
+}
+
+.auth-brand-content h1 {
+    margin-top: 22px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(48px, 5vw, 82px);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+}
+
+.auth-brand-content h1 span {
+    display: block;
+    color: var(--red);
+}
+
+.auth-brand-content p {
+    max-width: 480px;
+    margin-top: 30px;
+    color: var(--white-soft);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.auth-decoration {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted-dark);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================
+   FORM PANEL
+========================= */
+
+.auth-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: var(--black);
+}
+
+.auth-form-container {
+    width: 100%;
+    max-width: 460px;
+}
+
+.auth-heading {
+    margin-bottom: 38px;
+}
+
+.auth-heading h2 {
+    margin-top: 12px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 42px;
+    letter-spacing: -0.04em;
+}
+
+.auth-heading p {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white-soft);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 16px 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    outline: none;
+
+    background: var(--surface);
+    color: var(--white);
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--muted-dark);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.1);
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password-toggle {
+    border: none;
+    background: none;
+    color: var(--red-bright);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.auth-submit {
+    width: 100%;
+    margin-top: 5px;
+    min-height: 52px;
+}
+
+.button-loader {
+    display: none;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.form-message {
+    display: none;
+    padding: 12px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.error-message {
+    color: #ff858a;
+    background: rgba(229, 9, 20, 0.08);
+    border: 1px solid rgba(229, 9, 20, 0.25);
+}
+
+.error-message.visible {
+    display: block;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 28px 0;
+    color: var(--muted-dark);
+    font-size: 11px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--border);
+}
+
+
+/* =========================
+   GOOGLE
+========================= */
+
+.oauth-button {
+    width: 100%;
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--white);
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.oauth-button:hover {
+    background: var(--surface);
+    border-color: var(--border-light);
+}
+
+.google-icon {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.auth-footer-text {
+    margin-top: 28px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.auth-footer-text a {
+    color: var(--red-bright);
+    font-weight: 600;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .auth-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-brand-panel {
+        min-height: 420px;
+        padding: 30px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .auth-brand-content h1 {
+        font-size: clamp(46px, 11vw, 70px);
+    }
+
+    .auth-form-panel {
+        padding: 50px 25px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .auth-brand-panel {
+        min-height: 350px;
+    }
+
+    .auth-brand-content p {
+        font-size: 15px;
+    }
+
+    .auth-heading h2 {
+        font-size: 34px;
+    }
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group select {
+    appearance: none;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+.success-message {
+    display: block;
+    color: #8df0b0;
+    background: rgba(40, 180, 90, 0.08);
+    border: 1px solid rgba(40, 180, 90, 0.25);
+}

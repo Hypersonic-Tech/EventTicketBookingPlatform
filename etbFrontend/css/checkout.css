@@ -1,0 +1,396 @@
+.checkout-page {
+    min-height: 100vh;
+    background: var(--black);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.checkout-security {
+    margin-left: auto;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.security-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #42d878;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.checkout-main {
+    padding: 80px 0 100px;
+}
+
+.checkout-container {
+    max-width: 1150px;
+}
+
+.checkout-heading {
+    margin-bottom: 50px;
+}
+
+.checkout-heading h1 {
+    max-width: 800px;
+
+    margin-top: 15px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(45px, 6vw, 80px);
+
+    line-height: 0.92;
+
+    letter-spacing: -0.06em;
+}
+
+.checkout-heading h1 span {
+    color: var(--red);
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.checkout-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        360px;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.checkout-card {
+    padding: 28px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--surface);
+}
+
+.checkout-card-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+.checkout-card-heading span {
+    color: var(--red);
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.checkout-card-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 22px;
+}
+
+
+/* =========================
+   EVENT
+========================= */
+
+.checkout-event {
+    padding: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--black);
+}
+
+.checkout-event-category {
+    color: var(--red-bright);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.checkout-event h3 {
+    margin-top: 8px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 25px;
+}
+
+.checkout-event p {
+    margin-top: 8px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================
+   QUANTITY
+========================= */
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 25px;
+}
+
+.quantity-control > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.quantity-control span {
+    font-weight: 600;
+}
+
+.quantity-control small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.quantity-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quantity-buttons button {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--white);
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+.quantity-buttons button:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+.quantity-buttons strong {
+    min-width: 20px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   ATTENDEE
+========================= */
+
+.attendee-information {
+    padding: 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--black);
+}
+
+.attendee-name {
+    font-weight: 600;
+}
+
+.attendee-email {
+    margin-top: 5px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================
+   ORDER
+========================= */
+
+.order-summary {
+    position: sticky;
+    top: 105px;
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(229, 9, 20, 0.13),
+            transparent 40%
+        ),
+        var(--surface);
+}
+
+.order-summary h2 {
+    margin-top: 10px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 30px;
+}
+
+.summary-event {
+    margin: 25px 0;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--white-soft);
+    font-weight: 600;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.summary-divider {
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: var(--border);
+}
+
+.summary-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary-total span {
+    color: var(--muted);
+}
+
+.summary-total strong {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 25px;
+}
+
+.checkout-button {
+    width: 100%;
+
+    margin-top: 25px;
+}
+
+.checkout-note {
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.checkout-error {
+    display: none;
+
+    padding: 14px;
+
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    border-radius: 8px;
+
+    background: rgba(229, 9, 20, 0.08);
+
+    color: #ff858a;
+
+    font-size: 13px;
+}
+
+.checkout-error.visible {
+    display: block;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .order-summary {
+        position: static;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .checkout-main {
+        padding-top: 55px;
+    }
+
+    .checkout-card,
+    .order-summary {
+        padding: 20px;
+    }
+
+    .quantity-control {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+}

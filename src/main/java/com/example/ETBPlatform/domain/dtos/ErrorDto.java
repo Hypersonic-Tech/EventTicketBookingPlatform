@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ErrorDto {
     private String error;
+    private int status;
 }

@@ -4,6 +4,6 @@ public enum Role {
 
     ATTENDEE,
     ORGANIZER,
-    STAFF,
-    ADMIN
+    ADMIN,
+    STAFF
 }

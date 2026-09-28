@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Events | EVENTX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/events.css">
+</head>
+
+<body class="events-page">
+
+<header class="navbar">
+
+    <div class="container navbar-inner">
+
+        <a href="../index.html" class="brand">
+            <span class="brand-mark">E</span>
+            <span class="brand-name">EVENT<span>X</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="events.html" class="active">Events</a>
+            <a href="#categories">Categories</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="login.html" class="login-link">
+                Login
+            </a>
+
+            <a href="signup.html" class="btn btn-primary">
+                Get Started
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="events-hero">
+
+        <div class="container">
+
+            <span class="eyebrow">
+                DISCOVER YOUR NEXT EXPERIENCE
+            </span>
+
+            <h1>
+                FIND SOMETHING
+                <span>WORTH SHOWING UP FOR.</span>
+            </h1>
+
+            <p>
+                Discover concerts, technology events, workshops,
+                conferences and experiences happening around you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FILTER -->
+
+    <section class="event-discovery">
+
+        <div class="container">
+
+            <div class="event-toolbar">
+
+                <div class="search-wrapper">
+
+                    <label for="eventSearch">
+                        Search events
+                    </label>
+
+                    <input
+                        type="search"
+                        id="eventSearch"
+                        placeholder="Search by event name..."
+                    >
+
+                </div>
+
+
+                <div class="filter-wrapper">
+
+                    <button
+                        class="event-filter active"
+                        data-category="ALL"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="event-filter"
+                        data-category="TECHNOLOGY"
+                    >
+                        Technology
+                    </button>
+
+                    <button
+                        class="event-filter"
+                        data-category="MUSIC"
+                    >
+                        Music
+                    </button>
+
+                    <button
+                        class="event-filter"
+                        data-category="WORKSHOP"
+                    >
+                        Workshops
+                    </button>
+
+                    <button
+                        class="event-filter"
+                        data-category="SPORTS"
+                    >
+                        Sports
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-results-header">
+
+                <span id="eventResultCount">
+                    Loading events...
+                </span>
+
+                <select id="eventSort">
+
+                    <option value="date">
+                        Date
+                    </option>
+
+                    <option value="name">
+                        Name
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="eventGrid"
+                class="event-grid"
+            >
+
+                <div class="events-loading">
+                    Loading events...
+                </div>
+
+            </div>
+
+
+            <div
+                id="eventEmpty"
+                class="events-empty hidden"
+            >
+
+                <div class="empty-large-icon">
+                    /
+                </div>
+
+                <h2>
+                    No events found.
+                </h2>
+
+                <p>
+                    Try another search or category.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-bottom">
+
+        <span>
+            © 2026 EVENTX
+        </span>
+
+        <span>
+            Built for experiences.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="../js/core/api.js"></script>
+<script src="../js/core/auth.js"></script>
+<script src="../js/core/router.js"></script>
+
+<script src="../js/services/eventService.js"></script>
+
+<script src="../js/pages/events.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Event</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/organizer.css">
+
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <a href="../../index.html" class="brand">
+        <span class="brand-mark">E</span>
+        <span class="brand-name">EVENT<span>X</span></span>
+    </a>
+
+    <a href="dashboard.html" class="dashboard-back">
+        ← Dashboard
+    </a>
+
+</header>
+
+
+<main class="organizer-form-container">
+
+    <div class="form-header">
+
+        <span class="eyebrow">NEW EXPERIENCE</span>
+
+        <h1>Create your event.</h1>
+
+        <p>
+            Give your audience something worth showing up for.
+        </p>
+
+    </div>
+
+
+    <form id="createEventForm" class="organizer-form">
+
+        <section class="form-section">
+
+            <div class="form-section-title">
+                <span>01</span>
+
+                <div>
+                    <h2>Event information</h2>
+                    <p>Tell attendees what your event is about.</p>
+                </div>
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group full-width">
+
+                    <label for="eventName">
+                        Event name
+                    </label>
+
+                    <input
+                        id="eventName"
+                        name="name"
+                        type="text"
+                        placeholder="e.g. Future Tech Summit 2026"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label for="eventDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="eventDescription"
+                        name="description"
+                        rows="6"
+                        placeholder="Describe your event..."
+                        required
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="form-section">
+
+            <div class="form-section-title">
+                <span>02</span>
+
+                <div>
+                    <h2>Schedule</h2>
+                    <p>When does your experience happen?</p>
+                </div>
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="startTime">
+                        Start
+                    </label>
+
+                    <input
+                        id="startTime"
+                        name="startTime"
+                        type="datetime-local"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="endTime">
+                        End
+                    </label>
+
+                    <input
+                        id="endTime"
+                        name="endTime"
+                        type="datetime-local"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="salesStart">
+                        Ticket sales start
+                    </label>
+
+                    <input
+                        id="salesStart"
+                        name="salesStart"
+                        type="datetime-local"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="salesEnd">
+                        Ticket sales end
+                    </label>
+
+                    <input
+                        id="salesEnd"
+                        name="salesEnd"
+                        type="datetime-local"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="form-section">
+
+            <div class="form-section-title">
+                <span>03</span>
+
+                <div>
+                    <h2>Venue</h2>
+                    <p>Where will your audience meet?</p>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="venueId">
+                    Venue ID
+                </label>
+
+                <input
+                    id="venueId"
+                    name="venueId"
+                    type="text"
+                    placeholder="Enter venue ID"
+                    required
+                >
+
+                <small>
+                    We will replace this with a venue selector once the Venue API is connected.
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <div
+            class="form-message"
+            id="formMessage"
+        ></div>
+
+
+        <div class="form-actions">
+
+            <a
+                href="dashboard.html"
+                class="btn btn-secondary"
+            >
+                Cancel
+            </a>
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+                id="createEventButton"
+            >
+                Create Event
+            </button>
+
+        </div>
+
+    </form>
+
+</main>
+
+
+<script src="../../js/core/api.js"></script>
+<script src="../../js/core/auth.js"></script>
+<script src="../../js/services/eventService.js"></script>
+<script src="../../js/pages/createEvent.js"></script>
+
+</body>
+</html>

@@ -9,30 +9,37 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateEventRequestDto {
+public class EventRequestDto {
 
     @NotNull(message = "Name is required")
     private String name;
 
-    private LocalDateTime start;
+    @NotNull(message = "description is required")
+    private String description;
 
-    private LocalDateTime end;
+    @NotNull(message = "start time is required")
+    private LocalDateTime startTime;
 
-    @NotNull(message = "Venue information is required")
-    private String venue;
+    @NotNull(message = "end time is required")
+    private LocalDateTime endTime;
 
+    @NotNull(message = "sales start is required")
     private LocalDateTime salesStart;
 
+    @NotNull(message = "sales end is required")
     private LocalDateTime salesEnd;
 
-    @NotNull(message = "Event status is required")
     private EventStatus status;
 
     @NotEmpty(message = "At least one Ticket type is required")
     private List<CreateTicketTypeRequestDto> ticketTypes;
+
+    @NotNull(message = "venue is required")
+    private UUID venueId;
 
 }

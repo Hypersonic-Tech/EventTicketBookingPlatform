@@ -26,6 +26,7 @@ public class SecurityConfig {
 
     private final GoogleOAuth2SuccessHandler googleOAuth2SuccessHandler;
 
+/*
     @Value("${jwt.secret}")
     private String jwtSecret;
 
@@ -58,10 +59,10 @@ public class SecurityConfig {
 
         return converter;
     }
+*/
 
     @Bean
-    public SecurityFilterChain securityFilterChain(
-            HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
                 .csrf(csrf -> csrf.disable())
@@ -82,9 +83,9 @@ public class SecurityConfig {
                         ).permitAll()
 
                         .anyRequest().authenticated()
-                )
+                );
 
-                .oauth2ResourceServer(oauth2 ->
+                /*.oauth2ResourceServer(oauth2 ->
                         oauth2.jwt(jwt ->
                                 jwt.jwtAuthenticationConverter(
                                         jwtAuthenticationConverter()
@@ -97,7 +98,7 @@ public class SecurityConfig {
                                 .successHandler(
                                         googleOAuth2SuccessHandler
                                 )
-                );
+                );*/
 
         return http.build();
     }

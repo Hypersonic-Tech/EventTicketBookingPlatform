@@ -11,12 +11,17 @@ async function registerUser(userData) {
 }
 
 async function loginUser(credentials) {
-    if (!credentials.email || !credentials.password) {
-        throw new Error("Email and password are required.");
+
+    if (!credentials.email?.trim()) {
+        throw new Error("Email is required.");
+    }
+
+    if (!credentials.password) {
+        throw new Error("Password is required.");
     }
 
     return postRequest("/auth/login", {
-        email: credentials.email,
+        email: credentials.email.trim().toLowerCase(),
         password: credentials.password
     });
 }

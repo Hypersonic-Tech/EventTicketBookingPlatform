@@ -30,8 +30,15 @@ async function handleSignup(event) {
 
     try {
 
-        const response =
-            await registerUser(userData);
+        const response = await registerUser(userData);
+
+        console.log("REGISTER RESPONSE:", response);
+        console.log("ROLE FROM RESPONSE:", response?.role);
+
+        saveAuthentication(response);
+
+        console.log("CURRENT USER:", getCurrentUser());
+        console.log("CURRENT ROLE:", getCurrentRole());
 
         /*
          * Depending on your backend,
